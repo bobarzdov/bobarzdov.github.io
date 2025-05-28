@@ -1,0 +1,442 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '#' },
+        { text: 'Branches', href: '#branches' },
+        { text: 'About', href: '#about' },
+        { text: 'Our Team', href: '#team' },
+      ]}
+      
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot="title">
+      Welcome <span class="hidden xl:inline">to UAB In Divitiis</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Our consulting firm specializes in providing a range of services related to treasury and corporate finance.</span>
+      </span>
+    </Fragment>
+  </Hero>
+  
+
+  <!-- Note Widget ******************* -->
+
+  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
+
+  <!-- Features Widget *************** -->
+
+  <Features2
+    id="branches"
+    title="Our locations"
+    tagline="Find us"
+    columns={3}
+    items={[
+      {
+        title: 'Montelusa AB (Stockholm)',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'UAB In Divitiis (Vilnius)',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Arvigus AB (Norrtälje)',
+        icon: 'tabler:list-check',
+      }
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    isReversed
+    tagline="Inside the firm"
+    title="Corporate Finance Services:"
+    items={[
+      {
+        title: 'Mergers and Acquisitions (M&A)',
+        description: `Our services include both project-specific engagements and comprehensive benchmarking studies to optimize our clients' corporate capital structures.`,
+      },
+      {
+        title: 'Capital markets',
+        description:
+          'Our consultants have extensive experience, providing both practical operational support and strategic advisory services.',
+      },
+      {
+        title: 'Private equity',
+        description:
+          'Our goal is to facilitate our clients\' development by offering cost-effective and efficient solutions. As an independent firm, we maintain full autonomy from financial institutions, including commercial banks, ensuring an unbiased and expert assessment of corporate finance functions.\n',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Corporate Finance Services</h3>
+      We offer expertise in areas such as:
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: `We thoroughly analyze our clients’ needs and gain an in-depth understanding of their operations and processes. Together with our partners, we prepare businesses for sale, develop potential transaction structures, and formulate sales strategies.`,
+      },
+      {
+        title:
+          'We manage the entire sales process while ensuring confidentiality, engaging only with selected potential investors. Our deep understanding of the key drivers for both strategic and financial investors allows us to maximize the business’s value at the time of sale. ',
+      },
+      {
+        title:
+          "Our compensation is performance-based, aligning our success with that of our clients. We take pride in our extensive international network of partners, enabling us to connect with a broad pool of strategic and financial investors across various markets. ",
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Mergers & Acquisitions</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title:
+          'We also provide advisory services for business buyouts, including Management Buyouts (MBOs), where a company’s management team acquires the business from existing owners or parent companies. Our team assists clients in evaluating the feasibility of such acquisitions, securing financing, negotiating with owners and financial institutions, valuing businesses and shares, and executing transactions. ',
+      },
+      {
+        title:
+          'Additionally, we offer expertise in resolving shareholder disputes and conflicts through structured buyout solutions. We collaborate closely with financial institutions, sovereign wealth funds, infrastructure funds, venture capital firms, and private equity investors in Lithuania and internationally to facilitate financing through loans and bonds. In M&A, our primary focus is on the renewable energy, food, pharmaceutical, and defense sectors. ',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Mergers & Acquisitions</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title:
+          'We assist businesses in capital-raising initiatives, particularly those expanding into new foreign markets in Scandinavia, the Baltic States, and Poland, as well as those seeking to acquire competitors or launch new products and services.',
+      },
+      {
+        title: 'Throughout the capital-raising process, we work closely with our clients to assess their needs and long-term vision. ',
+      },
+      {
+        title:
+          'We analyze various sources of capital, evaluating their advantages and disadvantages, and identifying the most suitable financial strategies for each business. ',
+      },
+      {
+        title: `We have established strong partnerships with financial institutions, family offices, sovereign wealth funds, venture capital firms, and private equity funds from the Middle East and Scandinavia, facilitating capital procurement through equity infusions, loans, bonds, and share offerings.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Capital Raising</h3>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title:
+          'Benchmarking existing treasury structures against industry best practices',
+      },
+      {
+        title: 
+          'Evaluating, recommending, and assisting in the implementation of value-added IT systems',        
+      },
+      {
+        title:
+          'Developing bank relationship strategies and negotiating optimal cash management and credit conditions, including renegotiating existing credit facilities'
+      },
+      {
+        title: 
+          'Designing effective foreign exchange (FX) hedging strategies and overseeing their implementation'
+      },
+      {
+        title:
+          'Assisting in the formulation of risk management policies and defining an appropriate risk management framework. UAB In Divitiis also provides assistance in establishing and structuring treasury and corporate finance functions'
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Treasury Services</h3>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+    <Fragment slot="content">
+      Our experts bring extensive experience from senior treasury roles in Europe and North America, having worked with multinational corporations such as ABB, Whirlpool, British Petroleum, Alcan, Lantmännen, Hamso, Stockholm Exergy, PakMarkas, Ergolain, and Maxima Group.
+      They have successfully managed complex treasury projects, including refinancing, capital structure adjustments, financial and operational risk assessments, and evaluations of treasury IT systems. We provide support to companies at various stages, including:
+    </Fragment>
+  </Content>
+  
+  
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Get your dream in UAB"
+    items={[
+      {
+        title: '<span class="font-medium">Our Business Partner Network</span>',
+        description:
+          "We maintain a strategic partnership with UAE-based investment bankers, providing us with direct access to sovereign and family funds within the region. With over 20 years of experience and a well-established reputation, our partners offer unparalleled expertise in navigating regional business dynamics and investment practices. We also collaborate with leading Western European and Scandinavian banks and investment banking firms.",
+        icon: 'tabler:package',
+      },
+      {
+        title: '<span class="font-medium">Remuneration</span>',
+        description:
+          'We offer flexible remuneration structures tailored to our clients\' expectations and project requirements. Our standard model includes a combination of a modest retainer fee and a performance-based success fee. We are committed to listening to our clients, understanding their needs, and delivering comprehensive solutions that align with their objectives.',
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: '<span class="font-medium">References</span>',
+        description:
+          'We engaged Peter and Tomas from UAB In Divitiis to support the Kreiss Group Finance team in a complex cross-border financing project. Additionally, we sought their expertise in reviewing our treasury structure and risk management framework. Their professionalism, strategic insight, and deep understanding of modern treasury methodologies and corporate finance strategies were truly impressive. The reports, recommendations, and insights provided by the In Divitiis team significantly contributed to the development of our finance function. Furthermore, their advice on treasury IT systems and applications proved highly valuable and relevant. We strongly recommend UAB In Divitiis as a trusted financial partner in corporate finance and treasury strategy.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Sectors of Activity"
+    subtitle="Our consultants have extensive experience across the following industries:"
+    tagline="Components"
+    items={[
+      {
+        title: 'Renewable energy',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Food production and processing',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Logistics',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Pharmaceuticals and bioengineering',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Deep technology',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Infrastructure',
+        icon: 'flat-color-icons:database',
+      },
+      {
+        title: 'Defense industry',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'Renewable energy equipment production and sales',
+        icon: 'flat-color-icons:currency-exchange',
+      }
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+  
+  <!-- FAQs Widget ******************* -->
+
+
+  <Content
+    id="team"
+    isAfterContent
+    items={[
+      {
+        title:
+          'Tomas Pitkauskas',
+        description:
+          'Tomas is a results-driven finance professional with extensive experience in financial function development, cash management, financial controls, management reporting, and budgeting. He has a proven track record of optimizing financial and business operations to enhance performance and profitability. Tomas has held senior finance management positions at MAXIMA Group, Miss Group, and Impuls LTU, with significant market expertise in Poland.' +
+          'UAB In Divitiis boasts an extensive network of financial and business professionals across Western and Eastern Europe. Tomas and Peter have long-standing relationships with these consultants and are confident in their ability to deliver work of the highest quality.'
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Our Team</h3>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Peter Davidsson',
+        description:
+          'Peter is a highly experienced Swedish treasury professional with over 30 years of expertise in corporate treasury. He has held senior financial positions at multinational corporations such as ABB, British Petroleum, Alcan, Whirlpool, and Lantmännen. Peter has successfully established treasury functions for large international companies in both in-house roles and as a consultant. ' +
+          'He possesses extensive experience in structuring diverse funding models, including project finance in Eastern Europe and Poland. His strong banking network and connections with international financial institutions such as EBRD, EIB, and the World Bank further enhance his expertise. Additionally, he has substantial experience in capital markets, sustainability, and risk management.\n'
+      }
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Our Team</h3>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title:
+          'Jonas Rosengren',
+        description:
+          'Jonas is an experienced financing professional with an impressive background in various leading roles. He has held positions such as CFO, Group Treasurer, and Consultant at prominent companies like Hemsö, Vasakronan, Nasdaq, Klarabo, and SBB. Jonas has extensive experience in funding from different markets worldwide, which has given him a broad understanding of global financing strategies and market dynamics. ' +
+          'Jonas has built an extensive network of contacts with international banks and investors, making him an invaluable resource for companies seeking financing and strategic advice. His expertise spans several areas, including capital structuring, risk management, and financial planning. Jonas is known for his ability to identify and implement innovative solutions that optimize companies\' financial performance and long-term growth. In addition to his technical skills, Jonas is a strong leader and communicator, enabling him to effectively collaborate with various stakeholders and drive successful projects. His commitment to delivering high-quality results and his deep understanding of financial markets make him a reliable partner for companies striving to achieve their financial goals.'
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Our Team</h3>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <FAQs
+    title="References"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Tomas Pitkauskas',
+        
+      },
+      {
+        title: 'Peter Davidsson',
+        
+      },
+      {
+        title: 'Jonas Rosengren',
+      }
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Customers', amount: '250+' },
+      { title: 'Successful cases', amount: '1000+' }
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+</Layout>
