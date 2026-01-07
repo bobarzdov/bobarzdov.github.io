@@ -109,6 +109,7 @@ export interface Headline {
   title?: string;
   subtitle?: string;
   tagline?: string;
+  description?: string;
   classes?: Record<string, string>;
 }
 
@@ -135,6 +136,7 @@ export interface Stat {
 export interface Item {
   title?: string;
   description?: string;
+  subtitle?: string;
   icon?: string;
   classes?: Record<string, string>;
   callToAction?: CallToAction;
