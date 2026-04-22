@@ -1,0 +1,483 @@
+---
+import Layout from '/src/layouts/PageLayout.astro';
+
+import Header from '/src/components/widgets/Header.astro';
+import Hero from '/src/components/widgets/Hero.astro';
+import Note from '/src/components/widgets/Note.astro';
+import Features from '/src/components/widgets/Features.astro';
+import Features2 from '/src/components/widgets/Features2.astro';
+import Steps from '/src/components/widgets/Steps.astro';
+import Content from '/src/components/widgets/Content.astro';
+import BlogLatestPosts from '/src/components/widgets/BlogLatestPosts.astro';
+import FAQs from '/src/components/widgets/FAQs.astro';
+import Stats from '/src/components/widgets/Stats.astro';
+import CallToAction from '/src/components/widgets/CallToAction.astro';
+
+const metadata = {
+    title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+    ignoreTitleTemplate: true,
+};
+---
+
+<Layout>
+    <Fragment slot="announcement"></Fragment>
+    <Fragment slot="header">
+        <Header
+                links={[
+                    {text: 'Home', href: '#'},
+                    {text: 'Branches', href: '#branches'},
+                    {text: 'About', href: '#about'},
+                    {text: 'M&A', href: '#m&a'},
+                    {text: 'Capital Raising', href: '#capris'},
+                    {text: 'Treasury', href: '#treserv'},
+                    {text: 'Sectors of Activity', href: '#seac'},
+                    {text: 'Team', href: '#team'},
+                    {text: 'References', href: '#refs'},
+                    {text: 'Contacts', href: '#contacts'},
+                ]}
+
+                isSticky
+                showToggleTheme
+        />
+    </Fragment>
+    <!-- Hero Widget ******************* -->
+
+    <Hero
+            actions={[
+                {text: 'Learn more', href: '#about'},
+            ]}
+            image={{src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image'}}
+    >
+        <Fragment slot="title">
+            <!--Welcome <span class="hidden xl:inline">to UMA Platform</span>-->
+            Welcome to Finance & Business Platform UMA
+        </Fragment>
+
+        <Fragment slot="subtitle">
+            <!--<span class="hidden sm:inline">-->
+            <span class="font-semibold">Our consulting firm specializes in providing a range of services related to treasury and corporate finance.</span>
+            <!--</span>-->
+        </Fragment>
+    </Hero>
+
+
+    <!-- Note Widget ******************* -->
+
+    <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance"/>
+
+    <!-- Features Widget *************** -->
+
+    <Features2
+            id="branches"
+            title="Our locations"
+            tagline="Find us"
+            columns={3}
+            items={[
+                {
+                    title: 'Montelusa AB (Stockholm)',
+                    icon: 'tabler:brand-tailwind',
+                },
+                {
+                    title: 'UAB In Divitiis',
+                    icon: 'tabler:components',
+                },
+                {
+                    title: 'Arvigus AB (Norrtälje)',
+                    icon: 'tabler:list-check',
+                }
+            ]}
+    />
+
+    <!-- Content Widget **************** -->
+
+    <Content
+            id="about"
+            isReversed
+            tagline="Inside the Company"
+            title="Corporate Finance Services:"
+            items={[
+                {
+                    title: 'Mergers and Acquisitions (M&A)',
+                    description: `Our services include both project-specific engagements and comprehensive benchmarking studies to optimize our clients' corporate capital structures.`,
+                },
+                {
+                    title: 'Capital markets',
+                    description:
+                        'Our consultants have extensive experience, providing both practical operational support and strategic advisory services.',
+                },
+                {
+                    title: 'Private equity',
+                    description:
+                        'Our goal is to facilitate our clients\' development by offering cost-effective and efficient solutions. As an independent firm, we maintain full autonomy from financial institutions, including commercial banks, ensuring an unbiased and expert assessment of corporate finance functions.\n',
+                },
+            ]}
+            image={{
+                //src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+                //src: 'https://ucarecdn.com/1f877c68-0ac8-4ac9-bff3-fa35d71d5d57/seanpollockPhYq704ffdAunsplash1.jpg',
+                src: 'https://ucarecdn.com/6d757d49-d82d-47ac-ae57-08934c1d62b1/charlesjenningsXCQ0Qc2cB8Munsplash.jpg',
+                alt: 'Colorful Image',
+            }}
+    >
+        <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">We offer expertise in areas such as:</h3>
+        </Fragment>
+
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <!-- Content Widget **************** -->
+
+    <Content
+            id='m&a'
+            isAfterContent
+            title="1. Mergers & Acquisitions"
+            items={[
+                {
+                    title: `We thoroughly analyze our clients’ needs and gain an in-depth understanding of their operations and processes. Together with our partners, we prepare businesses for sale, develop potential transaction structures, and formulate sales strategies.`,
+                },
+                {
+                    title:
+                        'We manage the entire sales process while ensuring confidentiality, engaging only with selected potential investors. Our deep understanding of the key drivers for both strategic and financial investors allows us to maximize the business’s value at the time of sale. ',
+                },
+                {
+                    title:
+                        "Our compensation is performance-based, aligning our success with that of our clients. We take pride in our extensive international network of partners, enabling us to connect with a broad pool of strategic and financial investors across various markets. ",
+                },
+            ]}
+            image={{
+                // src: 'https://ucarecdn.com/5757ee64-ad80-440e-a23e-6cf68f696b3a/julianhochgesangR0JXN80sjRcunsplash.jpg',
+                //src: 'https://ucarecdn.com/bb79657b-a766-47ca-a6dc-8af8566adfe8/istockphoto1403479106612x612.jpg',
+                //src: 'https://ucarecdn.com/9b5e3a12-b9cf-4e5c-9a21-978beb129f92/istockphoto1403479106.jpg',
+                //src: 'https://ucarecdn.com/04911e13-eb65-4940-9dc6-1d53a8d61a1e/ma.jpeg',
+                //src: 'https://ucarecdn.com/ceaf033a-b68b-4633-8c3d-e5ff9cb2e2da/ma1.jpeg',
+                //src: 'https://ucarecdn.com/04911e13-eb65-4940-9dc6-1d53a8d61a1e/-/preview/700x300/',
+                //src: 'https://ucarecdn.com/01129b2e-fe57-4310-8004-d8619eedde54/-/preview/500x300/',
+                src: 'https://ucarecdn.com/01129b2e-fe57-4310-8004-d8619eedde54/-/preview/1000x708/',
+                alt: 'Blueprint Image',
+            }}
+    >
+
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+
+    <Content
+            isReversed
+            isAfterContent
+            items={[
+                {
+                    title:
+                        'We also provide advisory services for business buyouts, including Management Buyouts (MBOs), where a company’s management team acquires the business from existing owners or parent companies. Our team assists clients in evaluating the feasibility of such acquisitions, securing financing, negotiating with owners and financial institutions, valuing businesses and shares, and executing transactions. ',
+                },
+                {
+                    title:
+                        'Additionally, we offer expertise in resolving shareholder disputes and conflicts through structured buyout solutions. We collaborate closely with financial institutions, sovereign wealth funds, infrastructure funds, venture capital firms, and private equity investors in Lithuania and internationally to facilitate financing through loans and bonds. In M&A, our primary focus is on the renewable energy, food, pharmaceutical, and defense sectors. ',
+                },
+            ]}
+            image={{
+                // src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+                // src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
+                src: 'https://ucarecdn.com/29217b3c-1e4a-4d64-b47a-cfcc2b4deb1c/-/preview/1000x665/',
+                alt: 'Blueprint Image',
+            }}
+    >
+        <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Mergers & Acquisitions</h3>
+        </Fragment>
+
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <!-- Content Widget **************** -->
+
+    <Content
+            id='capris'
+            isAfterContent
+            title='2. Capital Raising'
+            items={[
+                {
+                    title:
+                        'We assist businesses in capital-raising initiatives, particularly those expanding into new foreign markets in Scandinavia, the Baltic States, and Poland, as well as those seeking to acquire competitors or launch new products and services.',
+                },
+                {
+                    title: 'Throughout the capital-raising process, we work closely with our clients to assess their needs and long-term vision. ',
+                },
+                {
+                    title:
+                        'We analyze various sources of capital, evaluating their advantages and disadvantages, and identifying the most suitable financial strategies for each business. ',
+                },
+                {
+                    title: `We have established strong partnerships with financial institutions, family offices, sovereign wealth funds, venture capital firms, and private equity funds from the Middle East and Scandinavia, facilitating capital procurement through equity infusions, loans, bonds, and share offerings.`,
+                },
+            ]}
+            image={{
+                // src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+                //src: 'https://ucarecdn.com/387dff28-4603-4464-be07-e3e62361cea8/tompodmorex0cN9e4osYkunsplash.jpg',
+                //src: 'https://ucarecdn.com/1659b617-1c1e-4327-8fc9-2763d55d98c3/marcusreubensteinVoxCGVa_Wksunsplash.jpg',
+                //src: 'https://ucarecdn.com/82318b08-f326-4874-b477-1151f4335f67/15stocksoutlookmzcwsuperJumbo.webp',
+                src: 'https://ucarecdn.com/e61cd9fe-16af-4337-9f7b-bdcee8d1ccea/-/preview/1000x592/',
+                //src: 'https://ucarecdn.com/786c2b39-ff22-4dc9-9f5d-54216169a818/-/preview/800x450/',
+                alt: 'Astronauts Image',
+            }}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <!--<Content-->
+    <!--        id="treserv"-->
+    <!--        columns={1}-->
+    <!--        isReversed-->
+    <!--        isAfterContent-->
+    <!--        items={[-->
+    <!--            {-->
+    <!--                title:-->
+    <!--                    'Benchmarking existing treasury structures against industry best practices',-->
+    <!--            },-->
+    <!--            {-->
+    <!--                title:-->
+    <!--                    'Evaluating, recommending, and assisting in the implementation of value-added IT systems',-->
+    <!--            },-->
+    <!--            {-->
+    <!--                title:-->
+    <!--                    'Developing bank relationship strategies and negotiating optimal cash management and credit conditions, including renegotiating existing credit facilities'-->
+    <!--            },-->
+    <!--            {-->
+    <!--                title:-->
+    <!--                    'Designing effective foreign exchange (FX) hedging strategies and overseeing their implementation'-->
+    <!--            },-->
+    <!--            {-->
+    <!--                title:-->
+    <!--                    'Assisting in the formulation of risk management policies and defining an appropriate risk management framework. UMA Platform also provides assistance in establishing and structuring treasury and corporate finance functions'-->
+    <!--            },-->
+    <!--        ]}-->
+    <!--        image={{-->
+    <!--            // src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',-->
+    <!--            //src: 'https://ucarecdn.com/2c94a2c5-0250-4532-9111-a40f63ec93d6/connorganNZKGucZSZuEunsplash.jpg',-->
+    <!--            src: 'https://ucarecdn.com/27449f4d-9a3f-4c09-9788-e750d24260c7/brockwegner3ROwc3JSjCkunsplash.jpg',-->
+    <!--            alt: 'Astronauts Image',-->
+    <!--        }}-->
+    <!--&gt;-->
+    <!--    <Fragment slot="content">-->
+    <!--        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Treasury Services</h3>-->
+    <!--    </Fragment>-->
+    <!--    <Fragment slot="bg">-->
+    <!--        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>-->
+    <!--    </Fragment>-->
+    <!--    <Fragment slot="content">-->
+    <!--        Our experts bring extensive experience from senior treasury roles in Europe and North America, having worked-->
+    <!--        with multinational corporations such as ABB, Whirlpool, British Petroleum, Alcan, Lantmännen, Hamso,-->
+    <!--        Stockholm Exergy, PakMarkas, Ergolain, and Maxima Group.-->
+    <!--        They have successfully managed complex treasury projects, including refinancing, capital structure-->
+    <!--        adjustments, financial and operational risk assessments, and evaluations of treasury IT systems. We provide-->
+    <!--        support to companies at various stages, including:-->
+    <!--    </Fragment>-->
+    <!--</Content>-->
+
+
+    <Features2
+            id='treserv'
+            title="3. Treasury Services"
+            subtitle='Our experts bring extensive experience from senior treasury roles in Europe and North America, having worked with multinational corporations such as ABB, Whirlpool, British Petroleum, Alcan, Lantmännen, Hamso, Stockholm Exergy, PakMarkas, Ergolain, and Maxima Group. They have successfully managed complex treasury projects, including refinancing, capital structure adjustments, financial and operational risk assessments, and evaluations of treasury IT systems. We provide support to companies at various stages, including:'
+            items={[
+                {
+                    title:
+                        'Benchmarking existing treasury structures against industry best practices',
+                },
+                {
+                    title:
+                        'Evaluating, recommending, and assisting in the implementation of value-added IT systems',
+                },
+                {
+                    title:
+                        'Developing bank relationship strategies and negotiating optimal cash management and credit conditions, including renegotiating existing credit facilities'
+                },
+                {
+                    title:
+                        'Designing effective foreign exchange (FX) hedging strategies and overseeing their implementation'
+                },
+                {
+                    title:
+                        'Assisting in the formulation of risk management policies and defining an appropriate risk management framework. UMA Platform also provides assistance in establishing and structuring treasury and corporate finance functions'
+                },
+            ]}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Features2>
+
+
+    <!-- Steps Widget ****************** -->
+
+    <Steps
+            title="UAB"
+            items={[
+                {
+                    title: '<span class="font-medium">Our Business Partner Network</span>',
+                    description:
+                        "We maintain a strategic partnership with UAE-based investment bankers, providing us with direct access to sovereign and family funds within the region. With over 20 years of experience and a well-established reputation, our partners offer unparalleled expertise in navigating regional business dynamics and investment practices. We also collaborate with leading Western European and Scandinavian banks and investment banking firms.",
+                    icon: 'tabler:package',
+                },
+                {
+                    title: '<span class="font-medium">Remuneration</span>',
+                    description:
+                        'We offer flexible remuneration structures tailored to our clients\' expectations and project requirements. Our standard model includes a combination of a modest retainer fee and a performance-based success fee. We are committed to listening to our clients, understanding their needs, and delivering comprehensive solutions that align with their objectives.',
+                    icon: 'tabler:letter-case',
+                },
+            ]}
+            image={{
+                //src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+                //src: 'https://ucarecdn.com/5634692d-41ad-4681-9c81-a3fae01f85c0/-/preview/300x100/',
+                //src: 'https://ucarecdn.com/9121384e-aad7-49a2-8450-44adaa0c3cda/CMI600x400px3.webp',
+                src: 'https://ucarecdn.com/0e6908d2-5e0d-4fac-a478-f432f7af557d/Whyareyouinbusinessanyway1.png',
+                alt: 'Steps image',
+            }}
+    />
+
+    <!-- Features2 Widget ************** -->
+
+    <Features2
+            id='seac'
+            title="Sectors of Activity"
+            subtitle="Our consultants have extensive experience across the following industries:"
+            tagline="Components"
+            items={[
+                {
+                    title: 'Renewable energy',
+                    icon: 'flat-color-icons:template',
+                },
+                {
+                    title: 'Food production and processing',
+                    // icon: 'flat-color-icons:gallery',
+                    icon: 'tabler:shopping-cart',
+
+                },
+                {
+                    title: 'Logistics',
+                    icon: 'flat-color-icons:approval',
+                },
+                {
+                    title: 'Pharmaceuticals and bioengineering',
+                    // icon: 'flat-color-icons:document',
+                    icon: 'tabler:vaccine',
+                },
+                {
+                    title: 'High technology',
+                    icon: 'flat-color-icons:advertising',
+                },
+                {
+                    title: 'Infrastructure',
+                    icon: 'flat-color-icons:database',
+                },
+                {
+                    title: 'Defense industry',
+                    icon: 'flat-color-icons:voice-presentation',
+                },
+                {
+                    title: 'Renewable energy equipment production and sales',
+                    icon: 'flat-color-icons:currency-exchange',
+                }
+            ]}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Features2>
+
+    <!-- FAQs Widget ******************* -->
+
+
+    <Content
+            id="team"
+            isAfterContent
+            title='Our Team'
+            items={[
+                {
+                    title:
+                        'Tomas Pitkauskas',
+                    description:
+                        'Tomas is a results-driven finance professional with extensive experience in financial function development, cash management, financial controls, management reporting, and budgeting. He has a proven track record of optimizing financial and business operations to enhance performance and profitability. Tomas has held senior finance management positions at MAXIMA Group, Miss Group, and Impuls LTU, with significant market expertise in Poland.' +
+                        ' UMA Platform boasts an extensive network of financial and business professionals across Western and Eastern Europe. Tomas and Peter have long-standing relationships with these consultants and are confident in their ability to deliver work of the highest quality.'
+                },
+            ]}
+            image={{
+                src: 'https://ucarecdn.com/4ae856ce-ced3-476f-a10f-37291a23386b/-/scale_crop/850x850/',
+                alt: 'Astronauts Image',
+            }}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <Content
+            isReversed
+            isAfterContent
+            items={[
+                {
+                    title: 'Peter Davidsson',
+                    description:
+                        'Peter is a highly experienced Swedish treasury professional with over 30 years of expertise in corporate treasury. He has held senior financial positions at multinational corporations such as ABB, British Petroleum, Alcan, Whirlpool, and Lantmännen. Peter has successfully established treasury functions for large international companies in both in-house roles and as a consultant. ' +
+                        'He possesses extensive experience in structuring diverse funding models, including project finance in Eastern Europe and Poland. His strong banking network and connections with international financial institutions such as EBRD, EIB, and the World Bank further enhance his expertise. Additionally, he has substantial experience in capital markets, sustainability, and risk management.\n'
+                }
+            ]}
+            image={{
+                src: 'https://ucarecdn.com/6cef9b8f-d72e-411e-ad5b-a3dde24bde77/b680c0f3ed7e49d2827d63b026d8226f.jpg',
+                alt: 'Astronauts Image',
+            }}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <FAQs
+            id='refs'
+            title="References"
+            columns={1}
+            classes={{container: 'max-w-10xl'}}
+            items={[
+                {
+                    description:
+                        'We engaged Peter and Tomas from UMA Platform to support the Kreiss Group Finance team in a complex cross-border financing project. Additionally, we sought their expertise in reviewing our treasury structure and risk management framework. Their professionalism, strategic insight, and deep understanding of modern treasury methodologies and corporate finance strategies were truly impressive. The reports, recommendations, and insights provided by the In Divitiis team significantly contributed to the development of our finance function. Furthermore, their advice on treasury IT systems and applications proved highly valuable and relevant. We strongly recommend UMA Platform as a trusted financial partner in corporate finance and treasury strategy.',
+                }
+            ]}
+    />
+
+    <Features2
+            id="contacts"
+            title="Contacts"
+            columns={2}
+            items={[
+                {
+                    title: "Tomas Pitkauskas",
+                    subtitle: "CEO UAB In Divitiis Lithuania",
+                    description: 'T. +370 652 377 46 E. tomas@indivitiis.lt',
+                },
+                {
+                    title: "Peter L. Davidsson",
+                    subtitle: "CEO AB Montelusa Sweden",
+                    description: "T. +46 72 218 74 68 E. info@montelusa.se"
+                },
+            ]}
+    />
+
+    <!-- Stats Widget ****************** -->
+
+    <!--<Stats-->
+    <!--        stats={[-->
+    <!--            {title: 'Customers', amount: '250+'},-->
+    <!--            {title: 'Successful cases', amount: '1000+'}-->
+    <!--        ]}-->
+    <!--/>-->
+
+    <!-- CallToAction Widget *********** -->
+</Layout>
